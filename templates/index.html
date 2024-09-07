@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <a href="/add">Add New Task</a><br><br>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <strong>{{ task.name }}</strong>: {{ task.description }}
+            <a href="/edit/{{ task.id }}">Edit</a> | 
+            <a href="/delete/{{ task.id }}" onclick="return confirm('Are you sure?')">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
